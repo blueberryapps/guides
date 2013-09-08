@@ -20,6 +20,8 @@ Primární vývojovou platformou pro webové aplikace a služby je
 request-response cyklus, to znamená například pomocí Sidekiq
 * Nepoužíváme Turbolinks, preferujeme PJAX.
 * Na všech projektech musí být nainstalován `exception_notifier` gem
+* Pro testování emailů používáme `mailcatcher` gem
+* K správě cron tasků používáme `whenever` gem
 
 ### Testování
 

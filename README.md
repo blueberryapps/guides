@@ -10,6 +10,7 @@ přispívat každý, stačí poslat Pull request.
 ## Sekce
 
 * [Ruby & Ruby on Rails](ruby-development.md)
+* [Proces vývoje](dev-process.md)
 
 
 ## Licence
