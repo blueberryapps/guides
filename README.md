@@ -9,11 +9,13 @@ přispívat každý, stačí poslat Pull request.
 
 ## Sekce
 
-* [Ruby & Ruby on Rails](ruby-development.md)
 * [Proces vývoje](dev-process.md)
+* [Ruby & Ruby on Rails](ruby-development.md)
+* [Testování](testing.md)
 
 
 ## Licence
 
 © 2013 Blueberry.cz Apps s.r.o., [Creative Commons Attribution 
 License](http://creativecommons.org/licenses/by/3.0/).
+
