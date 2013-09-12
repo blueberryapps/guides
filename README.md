@@ -1,7 +1,5 @@
 # Blueberry Guides
 
-## Co to je?
-
 Blueberry guides je přiručka, která si klade za cíl shromáždit know-how 
 týkající se nejenom vývoje v Blueberry Apps. Může a měl by do ní 
 přispívat každý, stačí poslat Pull request.
