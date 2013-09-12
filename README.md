@@ -14,6 +14,8 @@ přispívat každý, stačí poslat Pull request.
 
 ## Licence
 
+![blueberry|apps](http://www.blueberryapps.com/themes/51f283baee19962c57000003/images/logo.png)
+
 © 2013 Blueberry.cz Apps s.r.o., [Creative Commons Attribution 
 License](http://creativecommons.org/licenses/by/3.0/).
 
