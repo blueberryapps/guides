@@ -19,7 +19,10 @@ https://github.com/bbatsov/ruby-style-guide)
 request-response cyklus, to znamená například pomocí Sidekiq
 * Nepoužíváme ActiveRecord finders (where, etc) v kontrolerech.
 
-### Gemy
+### Doporučené gemy
+
+Předtím, než se pustíte do implementace, je dobré se podívat, zdali 
+stejný problém už neřešil někdo před vámi.
 
 * [cancan](https://github.com/ryanb/cancan) - autorizace uživatelů 
 * [carrierwave](https://github.com/jnicklas/carrierwave) - upload souborů
@@ -44,3 +47,18 @@ Následující gemy nepoužívat na žádných projektech.
 * turbolinks - implicitní součást Rails 4, která působí víc problémů 
 než užitku. [pjax](https://github.com/defunkt/jquery-pjax) je lepší 
 alternativa.
+
+### Deploy
+
+Jak vyřešit problém se špatnými oprávněním po `deploy:setup`? 
+
+```ruby
+namespace :deploy do
+  task :set_config_perms, :roles => [ :app, :background ] do
+    run "chmod -R o-rwx #{File.join(release_path, 'config')}"
+  end
+end
+
+after 'deploy:update_code', 'deploy:set_config_perms'
+```
+
