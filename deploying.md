@@ -8,7 +8,7 @@ Následující config je už jen pro Rails 4, pro starší je config napsaný a 
 
 ## Vzorový deploy config
 
-Převzato z projektu segwaypoint-backend. Další možnost je přidat třeba `whenever` apod.
+Převzato z projektu segwaypoint-backend. Další možnost je přidat třeba `whenever` apod. *Všimněte si přítomnosti nastavení group_writable*.
 
 ### config/deploy.rb
 
