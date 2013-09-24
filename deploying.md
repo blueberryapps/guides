@@ -1,14 +1,20 @@
 # Deploying
 
-Deploy se většinou provádí po schválení pull requestu code masterem do `master` branch do produkčního, anebo jakékoliv testovací branche do staging prostředí.
+Deploy se většinou provádí po schválení pull requestu code masterem do `master`
+branch do produkčního, anebo jakékoliv testovací branche do staging prostředí.
 
 ## Deploy config
 
-Následující config je už jen pro Rails 4, pro starší je config napsaný a zřejmě se nebude měnit. Pro deploy používáme kromě `capistrano` na rozlišení stages gem `capistrano-ext` a poté (nově) pro ruby2 server (81.0.240.110) ještě gem `rvm-capistrano`.  Ten zajistí deploy pomocí správné verze Ruby, která je na serveru nainstalována a případně ji zvládne i pomocí rvm nainstalovat (netestováno).
+Následující config je už jen pro Rails 4, pro starší je config napsaný a zřejmě
+se nebude měnit. Pro deploy používáme kromě `capistrano` na rozlišení stages 
+gem `capistrano-ext` a poté (nově) pro ruby2 server (81.0.240.110) ještě gem
+`rvm-capistrano`.  Ten zajistí deploy pomocí správné verze Ruby, která je na 
+serveru nainstalována a případně ji zvládne i pomocí rvm nainstalovat (netestováno).
 
 ## Vzorový deploy config
 
-Převzato z projektu segwaypoint-backend. Další možnost je přidat třeba `whenever` apod. *Všimněte si přítomnosti nastavení group_writable*.
+Převzato z projektu segwaypoint-backend. Další možnost je přidat třeba `whenever` 
+apod. *Všimněte si přítomnosti nastavení group_writable*.
 
 ### config/deploy.rb
 ```ruby
@@ -36,25 +42,21 @@ set :keep_releases,   2
 set :group_writable,  false
 ssh_options[:forward_agent] = true
 
-# Passenger settings
 namespace :deploy do
+  # Passenger settings
   task :start do ; end
   task :stop do ; end
   task :restart, :roles => :app, :except => { :no_release => true } do
     run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
   end
-end
 
-# Symlink shared config
-before "deploy:finalize_update", "deploy:symlink_shared"
-namespace :deploy do
+  # Symlink shared config
+  before "deploy:finalize_update", "deploy:symlink_shared"
   task :symlink_shared do
     run "ln -nfs #{shared_path}/database.yml #{release_path}/config/database.yml"
   end
-end
 
-# RAILS 4 needs this by now
-namespace :deploy do
+  # RAILS 4 needs this by now
   namespace :assets do
     task :precompile, :roles => assets_role, :except => { :no_release => true } do
       run <<-CMD.compact
