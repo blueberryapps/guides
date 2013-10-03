@@ -10,6 +10,7 @@ přispívat každý, stačí poslat Pull request.
 * [Proces vývoje](dev-process.md)
 * [Ruby & Ruby on Rails](ruby-development.md)
 * [Testování](testing.md)
+* [Shell tipy & triky](shell-tips.md)
 
 ## Licence
 
