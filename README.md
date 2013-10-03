@@ -11,7 +11,6 @@ přispívat každý, stačí poslat Pull request.
 * [Ruby & Ruby on Rails](ruby-development.md)
 * [Testování](testing.md)
 
-
 ## Licence
 
 ![blueberry|apps](http://www.blueberryapps.com/themes/51f283baee19962c57000003/images/logo.png)
