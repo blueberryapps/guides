@@ -12,6 +12,18 @@ https://github.com/bbatsov/ruby-style-guide)
 
 ## Ruby on Rails
 
+Všechny nové projekty musí používat [blueberry_rails](
+https://github.com/blueberryapps/blueberry_rails) šablonu. Nejdříve je nutné 
+nainstalovat `blueberry_rails` gem:
+
+    $ gem install blueberry_rails
+
+Pak už jen vygenerovat projekt pomocí příkazu `blueberry_rails` (má 
+stejné možnosti jako `rails` příkaz):
+
+    $ blueberry_rails newproject
+
+
 ### Všeobecná pravidla
 
 * Preferujeme SQL databaze (MySQL, PostgreSQL) před NoSQL (MongoDB atd).
