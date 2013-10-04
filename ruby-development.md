@@ -26,10 +26,18 @@ stejné možnosti jako `rails` příkaz):
 
 ### Všeobecná pravidla
 
-* Preferujeme SQL databaze (MySQL, PostgreSQL) před NoSQL (MongoDB atd).
+* Preferujeme SQL databaze (PostgreSQL, MySQL) před NoSQL (MongoDB atd) pokud
+není k nasazení NoSQL opravdu pádný důvod.
 * Na každém větším projektu by se emaily mělo posílat mimo 
-request-response cyklus, to znamená například pomocí Sidekiq
+request-response cyklus, to znamená například pomocí Sidekiq.
 * Nepoužíváme ActiveRecord finders (where, etc) v kontrolerech.
+
+### Bundler
+
+* Vždy vyspecifikujte verzi Ruby v `Gemfile`
+* Používejte přesnou verzi u gemů, u kterých hrozí problémy s 
+kompatabilitou budoucích verzí
+* Používejte pesimistický lock na verzi (`~>`) u všech ostatních gemů
 
 ### Doporučené gemy
 
@@ -81,3 +89,4 @@ apod. *Všimněte si přítomnosti nastavení group_writable*.
 Nastavení v následujících souborech:
 * [config/deploy.rb](examples/deploy.rb)
 * [config/deploy/production.rb](examples/deploy-production.rb)
+
