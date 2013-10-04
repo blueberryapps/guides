@@ -45,9 +45,11 @@ V případech, kdy je potřeba otestovat funkcionalitu z několika feature
 branch najednou použijeme tzv. QA branch. QA branch se vytváří jako 
 uplně nová z `master` a pak se do ní mergují jednotlivé feature branch 
 
-1. `git checkout -b qa-2013-09-09`
-2. `git merge 001-feature-branch-one`
-3. `git merge 002-feature-branch-two`
-4. `git push origin qa-2013-09-09`
-5. `cap -s branch=qa-2013-09-09 staging deploy`
+```shell
+git checkout -b qa-2013-09-09
+git merge 001-feature-branch-one
+git merge 002-feature-branch-two
+git push origin qa-2013-09-09
+cap -s branch=qa-2013-09-09 staging deploy
+```
 
