@@ -6,14 +6,15 @@ nejak strukturován a řízen.
 
 ## GitHub
 
-K verzování používáme Git a Github.com. Všechny firemní projekty musí 
-mít repozitář na Github.com, tak aby jej kdokoliv mohl dohledat.
+K verzování používáme [Git](http://git-scm.com/) a [Github.com](
+http://github.com). Všechny firemní projekty musí mít repozitář 
+na Github.com, tak aby jej kdokoliv mohl dohledat.
 
 ### Workflow s Githubem
 
 1. Vytvořit feature branch
 2. Vytvořit Pull Request s označením WIP - Work in Progress
-4. Samotny vyvoj :)
+4. Vývoj :)
 5. Po dokončení změn odebrat WIP z názvu
 6. Code review
 7. Merge do `master` branche
