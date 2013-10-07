@@ -6,8 +6,9 @@
 
 * Dodržujeme jednotný styl kódu podle [Ruby style guide](
 https://github.com/bbatsov/ruby-style-guide)
-* Na nové projekty nasazujeme Ruby 2.0.
+* Na nové projekty nasazujeme vždy poslední stabilní verzi Ruby
 * Ruby verzi na které projekt běží specifikujeme pomocí souboru `.ruby-version`
+(včetně patch verze)
 
 
 ## Ruby on Rails
