@@ -30,7 +30,8 @@ stejné možnosti jako `rails` příkaz):
 * Preferujeme SQL databaze (PostgreSQL, MySQL) před NoSQL (MongoDB atd) pokud
 není k nasazení NoSQL opravdu pádný důvod.
 * Na každém větším projektu by se emaily mělo posílat mimo 
-request-response cyklus, to znamená například pomocí Sidekiq.
+request-response cyklus, to znamená například pomocí [Sidekiq](
+https://github.com/mperham/sidekiq).
 * Nepoužíváme ActiveRecord finders (where, etc) v kontrolerech.
 * Vždy používat překlady (i18n) pro všechny texty (šablony, atd.)
 
