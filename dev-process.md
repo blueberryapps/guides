@@ -10,7 +10,7 @@ K verzování používáme [Git](http://git-scm.com/) a [Github.com](
 http://github.com). Všechny firemní projekty musí mít repozitář 
 na Github.com, tak aby jej kdokoliv mohl dohledat.
 
-### Workflow s Githubem
+### GitHub Workflow
 
 1. Vytvořit feature branch
 2. Vytvořit Pull Request s označením WIP - Work in Progress
