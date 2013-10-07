@@ -6,16 +6,45 @@ nejak strukturován a řízen.
 
 ## GitHub
 
-K verzování používáme Git a Github.com. Všechny firemní projekty musí 
-mít repozitář na Github.com, tak aby jej kdokoliv mohl dohledat.
+K verzování používáme [Git](http://git-scm.com/) a [Github.com](
+http://github.com). Všechny firemní projekty musí mít repozitář 
+na Github.com, tak aby jej kdokoliv mohl dohledat.
 
-### Workflow s Githubem
+### GitHub Workflow
 
 1. Vytvořit feature branch
 2. Vytvořit Pull Request s označením WIP - Work in Progress
-3. Po dokončení změn odebrat WIP z názvu
-4. Code review
-5. Merge do `master` branche
+4. Vývoj :)
+5. Po dokončení změn odebrat WIP z názvu
+6. Code review
+7. Merge do `master` branche
+
+#### Git
+
+Vytvoření feature branch:
+
+```shell
+git checkout master
+git pull
+git checkout -b my-new-feature
+```
+
+Push branche na Github:
+
+```shell
+git push origin my-new-feature
+```
+
+Při práci ve feature branch je potřeba čas od času provést merge změn, které
+mezitím probíhají na `master` branch:
+
+```shell
+git fetch origin
+git rebase origin/master
+```
+
+Nezapomínejte psát smysluplné [commit message](
+http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html).
 
 #### Feature branches
 
