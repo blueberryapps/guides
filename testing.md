@@ -61,9 +61,6 @@ end
 Integrační testy modelů testují spolupráci objektů mezi sebou a s nižšími
 vrstvami, to mimojiné znamená, že integrační testy musí pracovat s databazí.
 
-
-### Unit testy kontrolerů (spec/controllers)
-
 ### Request testy kontrolerů (spec/request)
 
 Request testy kontrolerů jsou v integrační testy kontrolerů a rozhodně by
