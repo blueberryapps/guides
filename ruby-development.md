@@ -33,7 +33,8 @@ není k nasazení NoSQL opravdu pádný důvod.
 request-response cyklus, to znamená například pomocí [Sidekiq](
 https://github.com/mperham/sidekiq).
 * Nepoužívejte ActiveRecord finders (where, etc) v kontrolerech.
-* Vždy požívejte překlady (i18n) pro všechny texty (šablony, atd.)
+* Vždy požívejte překlady ([I18n API](http://guides.rubyonrails.org/i18n.html))
+pro všechny texty (šablony, atd.)
 * Preferujte šablonovací jazyk [slim](http://slim-lang.com/) oproti HAML a ERB.
 
 ### Bundler
