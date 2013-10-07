@@ -31,6 +31,7 @@ není k nasazení NoSQL opravdu pádný důvod.
 * Na každém větším projektu by se emaily mělo posílat mimo 
 request-response cyklus, to znamená například pomocí Sidekiq.
 * Nepoužíváme ActiveRecord finders (where, etc) v kontrolerech.
+* Vždy používat překlady (i18n) pro všechny texty (šablony, atd.)
 
 ### Bundler
 
