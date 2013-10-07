@@ -4,10 +4,10 @@
 
 ### Všeobecná pravidla
 
-* Dodržujeme jednotný styl kódu podle [Ruby style guide](
+* Dodržujte jednotný styl kódu podle [Ruby style guide](
 https://github.com/bbatsov/ruby-style-guide)
-* Na nové projekty nasazujeme vždy poslední stabilní verzi Ruby
-* Ruby verzi na které projekt běží specifikujeme pomocí souboru `.ruby-version`
+* Na nové projekty nasazujete vždy poslední stabilní verzi Ruby
+* Ruby verzi, na které projekt běží specifikujte pomocí souboru `.ruby-version`
 (včetně patch verze)
 
 
@@ -27,13 +27,13 @@ stejné možnosti jako `rails` příkaz):
 
 ### Všeobecná pravidla
 
-* Preferujeme SQL databaze (PostgreSQL, MySQL) před NoSQL (MongoDB atd) pokud
+* Preferujete SQL databaze (PostgreSQL, MySQL) před NoSQL (MongoDB atd) pokud
 není k nasazení NoSQL opravdu pádný důvod.
 * Na každém větším projektu by se emaily mělo posílat mimo 
 request-response cyklus, to znamená například pomocí [Sidekiq](
 https://github.com/mperham/sidekiq).
-* Nepoužíváme ActiveRecord finders (where, etc) v kontrolerech.
-* Vždy používat překlady (i18n) pro všechny texty (šablony, atd.)
+* Nepoužívejte ActiveRecord finders (where, etc) v kontrolerech.
+* Vždy požívejte překlady (i18n) pro všechny texty (šablony, atd.)
 * Preferujte šablonovací jazyk [slim](http://slim-lang.com/) oproti HAML a ERB.
 
 ### Bundler
