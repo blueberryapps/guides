@@ -34,6 +34,7 @@ request-response cyklus, to znamená například pomocí [Sidekiq](
 https://github.com/mperham/sidekiq).
 * Nepoužíváme ActiveRecord finders (where, etc) v kontrolerech.
 * Vždy používat překlady (i18n) pro všechny texty (šablony, atd.)
+* Preferujte šablonovací jazyk [slim](http://slim-lang.com/) oproti HAML a ERB.
 
 ### Bundler
 
@@ -60,6 +61,7 @@ formátování monetárních hodnot
 * [state_machine](https://github.com/pluginaweek/state_machine) - knihovna pro práci se stavy 
 (finite state machine) v Ruby třídách
 * [sidekiq](https://github.com/mperham/sidekiq) - background jobs
+* [slim](http://slim-lang.com/) - šablonovací jazyk podobný HAMLu
 * [simple_form](https://github.com/plataformatec/simple_form) - DSL pro HTML formuláře
 * [whenever](https://github.com/javan/whenever) - správa cron tasků
 
