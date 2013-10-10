@@ -8,6 +8,7 @@ přispívat každý, stačí poslat Pull request.
 ## Sekce
 
 * [Proces vývoje](dev-process.md)
+* [Instalace Ruby na MacOS X](ruby-setup.md)
 * [Ruby & Ruby on Rails](ruby-development.md)
 * [Testování](testing.md)
 * [Shell tipy & triky](shell-tips.md)
