@@ -1,14 +1,36 @@
 # Travis CI
 
-## Continuous deploy
+## Continuous integration
 
-1. Vytvorime SSH deploy klic
+Nastavení pro Travis CI se ukládá v souboru `.travis.yml` v samotném 
+repozitáří.
 
-```sh
-ssh-keygen -f deploykey
+Příklad nastavení pro Rails projekt:
+
+```yaml
+language: ruby
+cache: bundler
+rvm:
+  - 1.9.3
+  - 2.0.0
+services:
+  - postgresql
+before_script:
+  - cp config/database.test.yml config/database.yml
+  - psql -c 'create database avservis_fm_test;' -U postgres
+  - psql -c 'create database avservis_fm_development;' -U postgres
 ```
 
-2. Přídáme vygenerovaný deploy klíč do `.ssh/authorized_keys` na serveru.
+
+## Continuous deploy
+
+1. Vytvoříme SSH klíč pro deploy (bez hesla):
+
+```shell
+ssh-keygen -f deploy-C deploy@travis
+```
+
+2. Přídáme vygenerovaný deploy klíč (`deploy.pub`) do `.ssh/authorized_keys` na serveru.
 
 3. Ziskame veřejný klíč, pomocí kterého Travis stahuje buildy.
 
@@ -21,23 +43,23 @@ ssh-keygen -e -m PKCS8 -f id_travis.pub > id_travis.pub.pem
 
 ```shell
 password=`cat /dev/urandom | head -c 10000 | openssl sha1`
-openssl aes-256-cbc -k "$password" -in deploykey.pem -out deploykey.pem.enc -a
+openssl aes-256-cbc -k "$password" -in deploy -out deploy.pem.enc -a
 echo "$password" | openssl rsautl -encrypt -pubin -inkey id_travis.pub.pem -out secret
 ```
 
-5. Vytvorime slozku `.travis` v repozitáři a nakopírujeme do ní soubory `secret` a `deploykey.pem.enc`.
+5. Vytvorime slozku `.travis` v repozitáři a nakopírujeme do ní soubory `secret` a `deploy.pem.enc`.
 
 6. Upravíme `.travis.yml`.
 
 ```yaml
 before_script:
   - secret=`openssl rsautl -decrypt -inkey ~/.ssh/id_rsa -in .travis/secret`
-  - openssl aes-256-cbc -k "$secret" -in .travis/deploy_key.pem.enc -d -a -out .travis/deploy_key.pem
+  - openssl aes-256-cbc -k "$secret" -in .travis/deploy.pem.enc -d -a -out .travis/deploy.pem
 after_success:
   - |
     if [[ $TRAVIS_BRANCH == 'master' && $TRAVIS_PULL_REQUEST == 'false' ]]; then
-      chmod 600 .travis/deploy_key.pem
-      ssh-add .travis/deploy_key.pem
+      chmod 600 .travis/deploy.pem
+      ssh-add .travis/deploy.pem
       bundle exec cap staging deploy
     fi
 ```
