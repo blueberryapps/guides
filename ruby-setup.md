@@ -49,7 +49,7 @@ brew install ruby-build
 Nainstalujeme poslední verzi Ruby a pár základních gemů:
 
 ```shell
-rbenv install 2.0.0p247
+rbenv install 2.0.0-p247
 rbenv global 2.0.0-p247
 rbenv rehash
 gem update --system
