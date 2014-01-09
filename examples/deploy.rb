@@ -7,7 +7,7 @@ set :stages, %w(staging production)
 require 'capistrano/ext/multistage'
 
 # RVM settings
-set :rvm_ruby_string, "2.0.0-p247"        # use the same ruby as used locally for deployment
+set :rvm_ruby_string, "2.1.0"        # use the same ruby as used locally for deployment
 set :rvm_type, :system
 before 'deploy', 'rvm:create_gemset' # install Ruby and create gemset (both if missing)
 
