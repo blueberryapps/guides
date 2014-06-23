@@ -1,22 +1,24 @@
 # Vývojový proces
 
-Krásný a čistý kód je o ničem, pokud celý proces vývoje aplikace není
-nejak strukturován a řízen.
+Čistý kód sám o sobě nestačí, proces vývoje aplikací by měl mít strukturu
+a řízení.
 
 
 ## GitHub
 
-K verzování používáme [Git](http://git-scm.com/) a [Github.com](
-http://github.com). Všechny firemní projekty musí mít repozitář 
-na Github.com, tak aby jej kdokoliv mohl dohledat.
+K verzování používáme [Git](http://git-scm.com/), [Github.com](
+http://github.com) a [GitLab](http://gitlab.blueberry.cz). Všechny firemní 
+projekty musí mít repozitář na Githubu nebo GitLabu, aby jej kdokoliv mohl 
+dohledat.
 
-### GitHub Workflow
+### GitHub/GitLab Workflow
 
-1. Vytvořit feature branch
-2. Vytvořit Pull Request s označením WIP - Work in Progress
-4. Vývoj :)
-5. Po dokončení změn odebrat WIP z názvu
-6. Code review
+1. Vytvořit lokalní feature branch založenou na poslední verzi master branch
+2. Píšeme testy, píšeme kód, testy, kód, ... :)
+3. Push branch na Github/Gitlab
+4. Vytvořit Pull Request
+5. Code review
+6. Po vyřešení všech komentářů a schválení PR probíhá merge
 7. Merge do `master` branche
 
 #### Git
@@ -29,18 +31,18 @@ git pull
 git checkout -b my-new-feature
 ```
 
-Push branche na Github:
-
-```shell
-git push origin my-new-feature
-```
-
 Při práci ve feature branch je potřeba čas od času provést merge změn, které
 mezitím probíhají na `master` branch:
 
 ```shell
 git fetch origin
 git rebase origin/master
+```
+
+Push branche na Github:
+
+```shell
+git push origin my-new-feature
 ```
 
 Nezapomínejte psát smysluplné [commit message](
