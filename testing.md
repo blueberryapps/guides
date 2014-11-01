@@ -74,7 +74,7 @@ mají testovat aplikaci z pohledu uživatele. Pro každou functionalitu v projek
 musí existovat odpovídající akceptační test. Jedině tak, lze předejít hodinám
 neustáleho testování a ujištování, že nová functionalita nerozbije tu 
 stávající.
-Prefeřovaný způsob psaní akceptačních testů je pomocí RSpec a Capybara, příklad:
+Preferovaný způsob psaní akceptačních testů je pomocí RSpec a Capybara, příklad:
 
 ```ruby
 require 'spec_helper'
