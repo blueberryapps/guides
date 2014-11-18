@@ -49,8 +49,8 @@ brew install ruby-build
 Nainstalujeme poslední verzi Ruby a pár základních gemů:
 
 ```shell
-rbenv install 2.1.0
-rbenv global 2.1.0
+rbenv install 2.1.5
+rbenv global 2.1.5
 rbenv rehash
 gem update --system
 gem install bundler pg rails --no-document
