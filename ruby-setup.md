@@ -7,7 +7,7 @@ Návod na to, jak co nejkratší cestou k funkčnímu Ruby prostředí na Macu.
 Homebrew slouží k instalaci a správě balíčků na MacOS X.
 
 ```shell
-ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
 ## Databáze, knihovny apod.
@@ -55,4 +55,3 @@ rbenv rehash
 gem update --system
 gem install bundler pg rails --no-document
 ```
-
